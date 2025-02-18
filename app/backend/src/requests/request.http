@@ -1,0 +1,49 @@
+### Request: Create Employee
+
+POST http://localhost:3000/employees/create/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob25AZ21haWwuY29tIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzM5ODY2ODE3LCJleHAiOjE3Mzk5NTMyMTd9.4H5z72Ru2qg0an79en4SOv2mqZ4y9PO4yCSlH7iq7gQ
+
+{
+    "name": "Julio Cesar",
+    "lastName": "Garcia",
+    "address": "Calle 123",
+    "position": "Developer",
+    "salary": 4500,
+    "pension": "AFP",
+    "dni": "1234566",
+    "A": "1990-01-01",
+    "dateOfAdmission": "2021-01-01"
+}
+
+
+### Request: Get Employees
+
+GET http://localhost:3000/employees/
+
+### Request: Authenticate
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "julio@gmail.com",
+    "name": "Julio",
+    "password": "123"
+}
+
+### Request: Validate Token
+
+GET http://localhost:3000/auth/validate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob25AZ21haWwuY29tIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzM5ODY2ODE3LCJleHAiOjE3Mzk5NTMyMTd9.4H5z72Ru2qg0an79en4SOv2mqZ4y9PO4yCSlH7iq7gQ
+
+### Request: Validate Token
+
+GET http://localhost:3000/employees/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob25AZ21haWwuY29tIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzM5ODY2ODE3LCJleHAiOjE3Mzk5NTMyMTd9.4H5z72Ru2qg0an79en4SOv2mqZ4y9PO4yCSlH7iq7gQ
+
+
+###
+
+DELETE http://localhost:3000/employees/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlvQGdtYWlsLmNvbSIsIm5hbWUiOiJDZXNhciIsImlhdCI6MTczOTg4NzA1MywiZXhwIjoxNzM5OTczNDUzfQ.Akv68sNvypmTmHR9hkVzVF05Dsjyq8yAwG7d52akPTI

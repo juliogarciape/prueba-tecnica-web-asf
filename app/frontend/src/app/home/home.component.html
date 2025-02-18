@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <h1 class="text-center">Prueba Técnica</h1>
+  <p class="text-center">
+    La consultora ABC S.A.C debe presentar una solución para el área de personal
+    para el control de empleados.
+  </p>
+
+  <div class="card p-5 mt-2 w-50 mx-auto">
+    <form [formGroup]="employeeForm" (ngSubmit)="loginForm()">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Correo Electrónico</mat-label>
+        <input type="email" matInput placeholder="" formControlName="email" />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <div
+        *ngIf="
+          employeeForm.get('email')?.invalid &&
+          employeeForm.get('email')?.touched
+        "
+        class="error text-danger"
+      >
+        <small>El correo es obligatorio</small>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <mat-form-field appearance="outline" class="w-100 mt-2">
+        <mat-label>Contraseña</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder=""
+          formControlName="password"
+        />
+        <mat-icon matSuffix>password</mat-icon>
+      </mat-form-field>
+      <div
+        *ngIf="
+          employeeForm.get('password')?.invalid &&
+          employeeForm.get('password')?.touched
+        "
+        class="error text-danger"
+      >
+        <small>La contraseña es obligatoria</small>
+      </div>
+
+      <small *ngIf="loginError" class="d-block mt-2 text-danger">
+        Credenciales Incorrectas, intente nuevamente
+      </small>
+
+      <div class="text-center mt-3">
+        <button
+          mat-flat-button
+          color="primary"
+          class="w-100 p-2"
+          mat-raised-button
+          [disabled]="employeeForm.invalid"
+        >
+          Iniciar Sesión
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{
+  "name": "prueba-tecnica-asf",
+  "version": "1.0.0",
+  "description": "Administradora de Servicios Funerarios | ASF",
+  "main": "index.js",
+  "scripts": {
+    "install": "concurrently \"npm install --prefix app/frontend\" \"npm install --prefix app/backend\"",
+    "dev": "concurrently \"npm run start --prefix app/frontend\" \"npm run dev --prefix app/backend\"",
+    "start": "concurrently \"npm run start --prefix app/frontend\" \"npm run start --prefix app/backend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,114 @@
+<div class="container mt-5">
+  <div align="center">
+    <h4 class="h2">Nuevo Registro</h4>
+  </div>
+
+  <div class="card p-5 mt-2 w-75 mx-auto">
+    <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombres</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="name"
+          [(ngModel)]="employee.name"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Apellidos </mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="lastName"
+          [(ngModel)]="employee.lastName"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Selecciona una fecha"
+          name="birthDate"
+          [(ngModel)]="employee.dateOfBirth"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Direccion</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="address"
+          [(ngModel)]="employee.address"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>DNI</mat-label>
+        <input matInput placeholder="" name="dni" [(ngModel)]="employee.dni" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Cargo</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="position"
+          [(ngModel)]="employee.position"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha de Ingreso</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker2"
+          placeholder="Selecciona una fecha"
+          name="dateOfAdmission"
+          [(ngModel)]="employee.dateOfAdmission"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sueldo Mensual (S/)</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="salary"
+          type="number"
+          step="0.01"
+          [(ngModel)]="employee.salary"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Fondo de Pensiones</mat-label>
+        <mat-select name="pension" [(ngModel)]="employee.pension">
+          <mat-option value="AFP">AFP</mat-option>
+          <mat-option value="ONP">ONP</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="text-center mt-3 d-flex gap-5 justify-content-center">
+        <button mat-raised-button routerLink="/employees" class="">
+          Cancelar
+          <mat-icon> cancel </mat-icon>
+        </button>
+        <button mat-raised-button color="accent" class="">
+          Guardar Registro
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

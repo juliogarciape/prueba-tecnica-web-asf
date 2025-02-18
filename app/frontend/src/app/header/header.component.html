@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+  <span>ABC S.A.C</span>
+  <ng-container *ngIf="isAuthenticated">
+    <span class="example-spacer"></span>
+    <button mat-button (click)="logout()">Cerrar Sesion</button>
+  </ng-container>
+</mat-toolbar>
